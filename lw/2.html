@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>含钒矿泉水对胰岛素不敏感性的影响 · 论文翻译</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f2f4f8;
+            font-family: 'Georgia', 'Times New Roman', '宋体', 'SimSun', serif;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .paper-wrapper {
+            max-width: 1000px;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            padding: 50px 60px;
+            margin-bottom: 30px;
+            transition: all 0.2s;
+        }
+        @media print {
+            body { background: white; padding: 0.2in; }
+            .paper-wrapper { box-shadow: none; padding: 0; margin: 0; border-radius: 0; }
+            .no-print { display: none !important; }
+            .paper-wrapper { max-width: 100%; }
+        }
+        .title-main {
+            font-size: 26px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            color: #1e2b3c;
+        }
+        .subtitle-en {
+            text-align: center;
+            font-size: 16px;
+            color: #2c3e50;
+            margin-bottom: 6px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+        }
+        .authors {
+            text-align: center;
+            font-size: 15px;
+            color: #1e2b3c;
+            margin-top: 12px;
+            margin-bottom: 4px;
+            line-height: 1.7;
+        }
+        .affiliations {
+            text-align: center;
+            font-size: 13.5px;
+            color: #3a4a5a;
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+        .abstract {
+            background: #f8fafc;
+            padding: 18px 22px;
+            border-left: 5px solid #7f8c8d;
+            border-radius: 6px;
+            margin: 20px 0 18px 0;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #1e2b3c;
+        }
+        .abstract strong {
+            font-weight: 600;
+        }
+        .keywords {
+            font-size: 14px;
+            color: #2c3e50;
+            margin: 6px 0 20px 0;
+            font-style: italic;
+        }
+        .section {
+            margin-top: 28px;
+        }
+        .section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            border-bottom: 2px solid #d0d7de;
+            padding-bottom: 6px;
+            margin-bottom: 16px;
+            color: #1a2a3a;
+        }
+        .section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 18px 0 10px 0;
+            color: #1e3b4a;
+        }
+        .section p {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            text-align: justify;
+            color: #1f2b38;
+        }
+        .section table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin: 18px 0 16px 0;
+            background: white;
+            border: 1px solid #d8dde3;
+        }
+        .section table th,
+        .section table td {
+            border: 1px solid #cbd2d9;
+            padding: 10px 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .section table th {
+            background: #eef2f7;
+            font-weight: 600;
+        }
+        .figure-placeholder {
+            background: #f1f4f9;
+            border: 1px dashed #a0b3c9;
+            border-radius: 12px;
+            padding: 24px 20px;
+            margin: 16px 0 20px 0;
+            text-align: center;
+            color: #2c3e50;
+            font-size: 15px;
+        }
+        .figure-placeholder span {
+            background: #dce3ed;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .ref-list {
+            font-size: 13.5px;
+            line-height: 1.7;
+            list-style: none;
+            padding-left: 0;
+        }
+        .ref-list li {
+            margin-bottom: 6px;
+            padding-left: 1.2em;
+            text-indent: -1.2em;
+        }
+        .footer {
+            font-size: 13px;
+            color: #5a6d7e;
+            text-align: center;
+            margin-top: 14px;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #dce2e9;
+            margin: 28px 0 18px 0;
+        }
+        /* 解读说明区块 */
+        .interpretation {
+            background: #eaf4f0;
+            border-radius: 14px;
+            padding: 22px 30px;
+            margin-top: 32px;
+            border-left: 6px solid #1f6e5a;
+        }
+        .interpretation h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f3d31;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        .interpretation p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #13382c;
+            margin-bottom: 8px;
+        }
+        .interpretation ul {
+            margin: 8px 0 8px 20px;
+            padding-left: 8px;
+        }
+        .interpretation ul li {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #13382c;
+            margin-bottom: 4px;
+        }
+        .interpretation strong {
+            color: #0a2d22;
+        }
+        @media (max-width: 650px) {
+            .paper-wrapper { padding: 28px 18px; }
+            .title-main { font-size: 22px; }
+            .interpretation { padding: 18px 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="paper-wrapper" id="paperContent">
+        <!-- 标题部分 -->
+        <h1 class="title-main">含钒矿泉水对富含饱和脂肪酸饮食引起的<br>健康女性胰岛素不敏感性的影响</h1>
+        <div class="subtitle-en">Effect in Healthy Women of Mineral Water Containing Vanadium on the Insulin Insensitivity Induced by a Diet Rich in Saturated Fatty Acids</div>
+        <div class="authors">佐佐木 香苗*1，今田 拓磨*1，伊藤 和枝*2，古贺 里利子*2，坂田 利家*2，曲田 清彦*1，浦田 宏二*1</div>
+        <div class="affiliations">*1 大塚制药株式会社佐贺营养产品研究所 &nbsp; *2 中村学园大学营养科学部</div>
+        
+        <!-- 摘要 -->
+        <div class="abstract">
+            <strong>摘要</strong> 在日本，由于饮食习惯的西化，膳食脂肪，尤其是饱和脂肪酸的摄入量显著增加。伊藤等人已证明，富含饱和脂肪酸（SFA）的膳食会刺激健康年轻女性的餐后胰岛素释放。钒已知是一种模拟胰岛素生物效应的微量元素。本研究旨在评估含钒矿泉水对富含SFA饮食诱导的胰岛素不敏感性的影响。<br><br>
+            二十名健康年轻女性参与了这项交叉研究。我们使用了两种钒含量约为60μg/L的矿泉水（水A和水B）。受试者被分为两组，每组10人，分别饮用A水和B水。不含钒的矿泉水作为对照。每位受试者连续8天饮用每种水并同时摄入富含SFA的饮食。脂肪占总能量的30%，饱和脂肪酸（S）：单不饱和脂肪酸（M）：多不饱和脂肪酸（P）的比例为5:4:1。在最后一天，于晚餐后0、30、60和120分钟测量血浆葡萄糖水平以及血清胰岛素、甘油三酯和游离脂肪酸水平。<br><br>
+            与对照组相比，水A在餐后120分钟降低了血清胰岛素水平。水B也观察到了类似的效果。餐后血糖水平在对照组和含钒矿泉水之间没有显著差异。<br><br>
+            我们的结果表明，含钒矿泉水对富含SFA饮食引起的胰岛素不敏感性具有有益影响。<br>
+            <span style="display:inline-block; margin-top:6px; font-style:italic;">Jpn. J. Nutr. Diet. 62 (4) 227 ~ 234 (2004)</span>
+        </div>
+        <div class="keywords"><strong>关键词：</strong>胰岛素抵抗，饱和脂肪酸，矿泉水，钒，血清胰岛素水平，生活方式相关疾病</div>
+        
+        <!-- 正文 -->
+        <div class="section">
+            <h2>绪言</h2>
+            <p>近年来，在日本，由于饮食的西化、生活习惯的改变以及缺乏运动，2型糖尿病、高血压、高脂血症等生活方式相关疾病逐年增加。根据国家营养调查的结果，虽然过去30年总能量摄入几乎没有变化，但脂肪摄入量逐年增加，脂肪能量比率从1955年的8.7%显著上升到1965年的14.8%、1975年的22.3%、1985年的24.5%和1995年的26.4%。另一方面，从脂肪质量来看，富含于畜禽肉类脂肪和黄油等动物性脂肪中的饱和脂肪酸的摄入量显著增加。根据国家营养调查，1955年从畜禽肉类中摄入的脂肪不足1克（占每日脂肪摄入量的4.9%），但到2000年增加到了13克（占22.6%），约为原来的13倍²'³。这种脂肪摄入量的增加、脂肪质量的变化以及缺乏运动，导致骨骼肌和脂肪细胞等胰岛素敏感组织反应性降低，结果为了维持正常的糖代谢和脂质代谢，会分泌更多的胰岛素，引起高胰岛素血症。这种状态被称为“胰岛素抵抗”，已知与生活方式相关疾病的发病密切相关⁴。伊藤等人在一项探讨富含饱和脂肪酸饮食（高饱和脂肪酸饮食）对健康成年女性胰岛素抵抗影响的试验中发现，连续8天摄入高饱和脂肪酸饮食后的血糖值与摄入常规饮食时相比无差异，但血清胰岛素值显示较高，表明摄入高饱和脂肪酸饮食诱发了轻度的胰岛素抵抗（胰岛素敏感性降低）⁵。</p>
+            <p>Reaven将因胰岛素抵抗而导致的糖耐量异常、高血压、高极低密度脂蛋白-甘油三酯血症（高VLDL-TG血症）、低高密度脂蛋白-胆固醇血症（低HDL-胆固醇血症）称为X综合征⁶。Kaplan将具有高血压、肥胖、糖耐量异常、高甘油三酯血症（高TG血症）的情况命名为“死亡四重奏”⁷。这些都表明，2型糖尿病、高脂血症、高血压等生活方式相关疾病以胰岛素抵抗为基础，相互密切关联。也就是说，这些生活方式相关疾病与其说是独立的疾病，不如被认为是胰岛素抵抗综合征。已知各种生活方式相关疾病都是动脉硬化性疾病发病的危险因素，当数种疾病合并时，动脉硬化性疾病的发病风险会协同增加⁸。因此，我们认为预防或改善作为生活方式相关疾病根本原因的胰岛素抵抗至关重要。</p>
+            <p>因此，我们着眼于从饮食方面预防或改善胰岛素抵抗，使用伴有胰岛素抵抗的2型糖尿病模型KK-Ay小鼠进行了动物实验。结果发现，市售的含钒矿泉水具有改善胰岛素抵抗的作用⁹。钒作为具有胰岛素样作用的微量元素而为人所知，已有研究报告其具有改善胰岛素抵抗作用和抗糖尿病效果¹⁰。钒大量存在于蛤蜊、羊栖菜、扇贝等食品中，据说人类每天从食物中摄入10～60μg的钒，人体内存在50～200μg¹¹。然而，迄今尚无关于含钒食品对人类胰岛素抵抗作用的报道。</p>
+            <p>本试验以健康成年女性为对象，探讨了含钒水对摄入高脂肪饮食（高饱和脂肪酸饮食）时轻度胰岛素抵抗的影响。</p>
+        </div>
+
+        <div class="section">
+            <h2>方法</h2>
+            <h3>1. 对象</h3>
+            <p>受试者为中村学园大学在籍、无肝、肾、心、肺、血液等异常或既往病史，且糖耐量、临床检查值、血压、脉搏正常的健康成年女性。从中选取20名充分了解本试验内容并签署书面同意书者作为受试者。</p>
+            <h3>2. 伦理和知情同意</h3>
+            <p>在试验实施前，关于试验的内容、方法、安全性及伦理性，获得了中村学园大学研究审查委员会的批准。此外，本试验遵循赫尔辛基宣言的伦理原则进行。在试验开始前，向受试者本人充分说明试验内容后，以书面形式获得了受试者本人基于自由意愿同意参加本试验的证明。</p>
+            <h3>3. 试验概要</h3>
+            <p>将受试者（20名）分为A组（10名）和B组（10名）两组，在各组中实施交叉试验，主要评价项目为受试物摄入最后一天（受试物摄入第8天）晚餐时进行餐食负荷试验（Meal Tolerance Test: MTT）的血清胰岛素值。试验期分为I期和II期，每个试验期为8天。试验期间，让受试者摄入依据伊藤等人报告⁵ 配制的高饱和脂肪酸规定饮食。此外，各试验期间设有20天的洗脱期。为确认受试者身体组成在试验期间无重大变化，在事前检查时、洗脱期最后一天（事中检查）以及事后检查时进行了体重测量。</p>
+            <h3>4. 受试物</h3>
+            <p>作为含钒水，A组饮用“含钒水A（Crystal Geyser®，水源：美国加利福尼亚州威德-沙斯塔/大塚饮料株式会社）”，B组饮用“含钒水B（水源：Y县）”。“含钒水A”每1000ml含56μg，“含钒水B”每1000ml含61μg。对照组使用不含钒的矿泉水（水源：Y县）。各受试物的矿物质成分组成示于表1。另外，含钒水A和B均用于烹饪（煮饭等）。</p>
+            <p><strong>表1 受试物矿物质成分组成</strong></p>
+            <table>
+                <tr><th>项目</th><th>含钒水A</th><th>含钒水B</th><th>不含钒水</th></tr>
+                <tr><td>钠 (Na)</td><td>11.3 mg</td><td>3.8 mg</td><td>4.9 mg</td></tr>
+                <tr><td>钙 (Ca)</td><td>6.4 mg</td><td>8.4 mg</td><td>9.7 mg</td></tr>
+                <tr><td>镁 (Mg)</td><td>5.4 mg</td><td>3.3 mg</td><td>1.4 mg</td></tr>
+                <tr><td>钾 (K)</td><td>1.8 mg</td><td>0.9 mg</td><td>2.8 mg</td></tr>
+                <tr><td>钒 (V)</td><td>56 μg</td><td>61 μg</td><td>低于检测限</td></tr>
+            </table>
+            <p style="font-size:13px; color:#3a4a5a;">注）Na、Ca、Mg、K为产品标签标示值。V由山梨县食品卫生协会食品卫生检查所通过高频感应耦合等离子体质谱法测定。</p>
+
+            <h3>5. 饮食</h3>
+            <p>试验期间提供的饮食为高饱和脂肪酸规定食，其构成参考伊藤等人的报告⁵。以营养成分计算软件（“健康计算器”，建帛社）计算出每份饮食的组成。三餐合计的脂肪能量比为30%，脂肪酸组成比（S:M:P）设为5:4:1。菜单示例及营养成分组成示于表2和表3。此外，仅在晚餐时进行MTT，晚餐菜单内容全天相同。</p>
+            <p><strong>表2 高饱和脂肪酸规定食菜单示例</strong></p>
+            <table>
+                <tr><th>餐次</th><th>菜单</th></tr>
+                <tr><td>早餐</td><td>米饭、味噌汤、煎鸡蛋、黄油、果酱、牛奶、腌菜</td></tr>
+                <tr><td>午餐</td><td>米饭、汉堡肉饼、奶油炖菜、即食汤粉</td></tr>
+                <tr><td>晚餐</td><td>米饭、味噌汤、炸猪排、卷心菜丝、果冻</td></tr>
+            </table>
+            <p style="font-size:13px; color:#3a4a5a;">（注）使用黄油和猪油作为饱和脂肪酸的供给源。</p>
+            <p><strong>表3 高饱和脂肪酸规定食营养成分组成（平均值）</strong></p>
+            <table>
+                <tr><th>项目</th><th>早餐</th><th>午餐</th><th>晚餐</th><th>1日合计</th></tr>
+                <tr><td>能量 (kcal)</td><td>635</td><td>812</td><td>835</td><td>2282</td></tr>
+                <tr><td>蛋白质 (g)</td><td>24.2</td><td>33.5</td><td>25.6</td><td>83.3</td></tr>
+                <tr><td>脂肪 (g)</td><td>21.7</td><td>30.8</td><td>31.3</td><td>83.8</td></tr>
+                <tr><td>碳水化合物 (g)</td><td>84.5</td><td>99.0</td><td>107.3</td><td>290.8</td></tr>
+                <tr><td>脂肪能量比 (%)</td><td>30.7</td><td>34.2</td><td>33.7</td><td>33.0</td></tr>
+                <tr><td>脂肪酸组成比 (S:M:P)</td><td>-</td><td>-</td><td>-</td><td>5.3:4.5:1.0</td></tr>
+            </table>
+            <h3>6. 摄取方法</h3>
+            <p>在试验I期和II期的8天内，每天提供早、中、晚三餐的饮食和受试物，并要求完全摄取。受试物的摄取方法为：每天三餐时各饮用一杯（约200ml），烹饪用水（煮饭）使用各受试物约240ml/天。除此之外的饮用水（如两餐间、睡前等）也使用各受试物，自由饮用。</p>
+            <h3>7. 餐食负荷试验（MTT）</h3>
+            <p>在各期受试物摄取最后一天（第8天）的晚餐时进行MTT。晚餐从下午6点开始，在摄取前（0分钟）和摄取开始后30、60、120分钟共4次采血。采血使用真空采血管（肝素锂管和血清分离管），离心分离后，分别测定血浆葡萄糖、血清胰岛素、甘油三酯和游离脂肪酸。血糖测定采用葡萄糖脱氢酶法¹⁴，血清胰岛素测定采用化学发光酶免疫测定法¹³，血清甘油三酯测定采用酶法，血清游离脂肪酸测定采用酶法（ACS-ACOD法）¹⁵。¹⁶。</p>
+            <h3>8. 临床检查</h3>
+            <p>在事前（试验开始前）、事中（洗脱期最后一天）及事后检查时进行体重测量。在事前、事后检查时进行血液生化和血液学检查。此外，在事前检查时，作为耐糖能筛查，进行了口服葡萄糖耐量试验（75g OGTT）。</p>
+            <h3>9. 问卷调查</h3>
+            <p>试验期间，从事前检查到事后检查前一天，让受试者每天记录日常生活日志（问卷），以及自觉症状（腹胀、胃痛、腹痛、恶心、皮疹、腹泻、便秘等）和月经状况。此外，在试验I期和II期，要求每天在问卷中记录遵守事项、受试物及规定饮食的摄取情况。</p>
+            <p>进一步地，为确认受试者在试验期间的食物摄取状况与试验前相比无变化，在试验I期开始前和试验II期开始前，使用伊藤等人的简易食物摄取调查法¹⁷ 进行调查，并分析营养素等的摄入量。</p>
+            <h3>10. 统计分析</h3>
+            <p>分析对象为在试验I期和II期中，受试物摄取依从性良好的受试者。此外，MTT时的血液数据仅分析所有采血点采血和测定均顺利完成的受试者数据。所有结果以平均值±标准差表示（图为平均值±标准误）。统计处理方面，对晚餐时MTT的各测定值（0、30、60、120分钟），在对照组摄入期和含钒水摄入期之间（A组为“含钒水A”，B组为“含钒水B”），进行配对t检验比较。显著性水平设为P＜0.05。体重变化以事前检查为基准，对事中和事后检查时的变动进行配对t检验比较，显著性水平设为P＜0.05。此外，食物摄取状况的变动以试验I期开始前为基准，对试验II期开始前的营养素等摄入量进行配对t检验比较，显著性水平设为P＜0.05。</p>
+        </div>
+
+        <div class="section">
+            <h2>结果</h2>
+            <h3>1. 受试者背景</h3>
+            <p>20名受试者的背景资料示于表4。平均年龄为21.8±1.6岁，平均体重为51.1±5.7 kg，平均BMI为20.1±2.0 kg/m²。事前检查时的血糖值、血清胰岛素值、血清甘油三酯值、血清总胆固醇值均无超出正常范围者。</p>
+            <p><strong>表4 受试者背景</strong></p>
+            <table>
+                <tr><th>项目</th><th>数值 (平均值±标准差 (最小-最大))</th></tr>
+                <tr><td>年龄 (岁)</td><td>21.8 ± 1.6 (20-27)</td></tr>
+                <tr><td>体重 (kg)</td><td>51.1 ± 5.7 (44.0-60.8)</td></tr>
+                <tr><td>BMI (kg/m²)</td><td>20.1 ± 2.0 (17.4-23.8)</td></tr>
+                <tr><td>血糖值 (mg/dl)</td><td>85.6 ± 6.0 (73-94)</td></tr>
+                <tr><td>血清胰岛素值 (μU/ml)</td><td>6.7 ± 2.7 (2.7-14)</td></tr>
+                <tr><td>血清甘油三酯值 (mg/dl)</td><td>66.0 ± 28.9 (39-160)</td></tr>
+                <tr><td>血清总胆固醇值 (mg/dl)</td><td>178.7 ± 19.1 (149-218)</td></tr>
+            </table>
+            <h3>2. 受试物每日摄入量</h3>
+            <p>A组中含钒水A的每日摄入量为1,514±335 ml，与对照组的每日摄入量1,501±312 ml相比无显著差异。此外，B组中含钒水B的每日摄入量为1,343±312 ml，与对照组的每日摄入量1,349±314 ml相比无显著差异（表5）。</p>
+            <p>根据这些含钒水摄入时的受试物摄入量计算出的钒平均摄入量为83±18 μg/天。</p>
+            <p><strong>表5 受试物摄入量</strong></p>
+            <table>
+                <tr><th>组别</th><th>受试物</th><th>饮水场景</th><th>摄入量 (ml) 平均值±标准差</th><th>P值 (vs. 对照组)</th></tr>
+                <tr><td rowspan="4">A组</td><td rowspan="3">含钒水A (n=9)</td><td>餐时饮水</td><td>796 ± 226</td><td>0.8788</td></tr>
+                <tr><td>其他</td><td>478 ± 193</td><td>0.6629</td></tr>
+                <tr><td>煮饭摄入</td><td>241 ± 0</td><td>-</td></tr>
+                <tr><td>对照组</td><td>合计</td><td>1,514 ± 335</td><td>0.2901</td></tr>
+                <tr><td rowspan="4">B组</td><td rowspan="3">含钒水B (n=10)</td><td>餐时饮水</td><td>737 ± 276</td><td>0.8404</td></tr>
+                <tr><td>其他</td><td>366 ± 116</td><td>0.9071</td></tr>
+                <tr><td>煮饭摄入</td><td>241 ± 0</td><td>-</td></tr>
+                <tr><td>对照组</td><td>合计</td><td>1,343 ± 312</td><td>0.6245</td></tr>
+            </table>
+            <h3>3. 体重</h3>
+            <p>无论是A组还是B组，事前检查与事中检查及事后检查之间均未观察到显著波动。</p>
+            <h3>4. 食物摄取状况调查</h3>
+            <p>关于营养素等的摄入量，无论是A组还是B组，试验I期开始前与试验II期开始前相比均未观察到显著变化（数据未显示）。</p>
+            <p>此外，试验前后未确认到血液参数的异常变动、身体体征及自觉症状方面有临床意义异常，未见有害事件及副作用。</p>
+            <h3>5. MTT中的测定项目</h3>
+            <p><strong>（1）血清胰岛素值</strong> A组的血清胰岛素值在餐后120分钟时，与对照组的39.5±25.5 μU/ml相比，含钒水A组为29.9±14.9 μU/ml，显示较低值（P=0.050）。此外，B组的血清胰岛素值在餐后120分钟时，与对照组的38.6±13.8 μU/ml相比，含钒水B组为27.9±8.4 μU/ml，与含钒水A组显示了类似的趋势（图1）。</p>
+            <div class="figure-placeholder"><span>图1 MTT中血清胰岛素值的推移</span> （平均值±标准误，P值通过对对照组进行配对t检验计算得出）</div>
+            <p><strong>（2）血糖值</strong> A组的血糖值在餐前（0分钟）及餐后30、60、120分钟，对照组与含钒水A组之间均无差异。此外，B组的血糖值在餐前（0分钟）时，与对照组的92.1±4.1 mg/dl相比，含钒水B组为88.5±4.4 mg/dl，显示显著较低值（P＜0.01），但餐后血糖值在对照组与含钒水B组之间未观察到差异（图2）。</p>
+            <div class="figure-placeholder"><span>图2 MTT中血糖值的推移</span> （平均值±标准误，* P＜0.01 vs 对照组）</div>
+            <p><strong>（3）血清游离脂肪酸值和血清甘油三酯值</strong> 在餐前（0分钟）及餐后30、60、120分钟的所有时间点，无论是A组还是B组，对照组与含钒水组之间均未观察到显著差异（图3，4）。</p>
+            <div class="figure-placeholder"><span>图3 MTT中血清游离脂肪酸值的推移</span> （平均值±标准误）</div>
+            <div class="figure-placeholder"><span>图4 MTT中血清甘油三酯值的推移</span> （平均值±标准误）</div>
+        </div>
+
+        <div class="section">
+            <h2>考察</h2>
+            <p>迄今为止的流行病学研究和动物实验等已报告，脂肪摄入的增加和膳食中脂肪酸组成的变化与胰岛素抵抗的发病密切相关¹⁸'¹⁹。其中之一报道称，高脂肪饮食可在大鼠中诱发胰岛素抵抗，且影响因脂肪种类而异。即，Storlien等人通过大鼠实验阐明，饱和脂肪酸和单不饱和脂肪酸、n-6系不饱和脂肪酸会诱发外周组织（如肌肉组织和脂肪组织）的胰岛素抵抗，但通过用鱼油来源的n-3系长链脂肪酸或亚麻籽油来源的短链脂肪酸替换部分脂肪酸可以预防¹⁸。此外，也有报告称构成细胞膜的脂肪酸组成中饱和脂肪酸的增加会降低细胞膜的流动性、胰岛素受体数量和胰岛素作用²⁰。</p>
+            <p>本试验中用作受试物的“含钒水”是含有钒（一种已知具有胰岛素样作用的矿物质）的市售矿泉水。本试验使用了两种钒含量相近、水源地不同的“含钒水（含钒水A和B）”。在受试物摄入期间，未观察到受试者体重和饮食习惯的变化。比较摄入含钒水A和B时餐后120分钟的血清胰岛素值与摄入对照组时的值，均显示摄入含钒水时值较低。然而，摄入含钒水（A和B两组）时的餐后血糖值与摄入对照组时无显著差异。这些结果表明，摄入含钒水可能促进了细胞对糖的摄取，从而节省了胰岛素分泌。</p>
+            <p>钒作为一种具有胰岛素样作用的微量元素而闻名。胰岛素在外周组织（脂肪组织和骨骼肌）调节糖和脂质的代谢，维持生物体的稳态。胰岛素在骨骼肌和脂肪组织中具有促进糖摄取的作用⁸'²¹，以及在脂肪组织中抑制游离脂肪酸释放的作用²²。同样，已有报道称钒也能促进细胞对糖的摄取⁸'²¹，并进一步抑制脂肪组织细胞释放游离脂肪酸²³。此外，我们已确认“含钒水”具有抑制小鼠来源脂肪细胞3T3-L1释放游离脂肪酸的作用⁹。然而，动物试验报告称，钒在生物体内足以充分发挥胰岛素的作用，但不会将血糖值或血清脂质参数降至正常水平以下²⁴。在本试验中，作为受试者的健康成年女性在摄入高饱和脂肪酸饮食时，通过代偿性地增加胰岛素分泌来维持正常的糖和脂质代谢。因此，我们推测含钒水通过发挥胰岛素样作用，维持了正常的糖和脂质代谢，结果抑制了血清胰岛素水平的升高。</p>
+            <p>我们认为，以预防生活方式相关疾病为目的的功能性食品，应以日常改善饮食生活为基础，并期望是能辅助性且方便持续摄入的日常性高的食品。水满足这些条件，并且可用作烹饪用水，因此替代性和通用性极高。由于“含钒水”能够以饮用水或烹饪用水的形式摄入预期在日常饮食生活中发挥作用的量，因此我们认为，将其作为纠正现代人饮食生活变化和缺乏运动等生活习惯的一部分辅助使用，可更有效地有助于预防生活方式相关疾病的发生。</p>
+        </div>
+
+        <div class="section">
+            <h2>摘要</h2>
+            <p>随着饱食和饮食生活的西化，日本的脂肪摄入量正在增加。特别是饱和脂肪酸摄入量的增加尤为显著。伊藤等人在以健康年轻女性为对象的试验中发现，摄入高饱和脂肪酸饮食会降低胰岛素敏感性，提高餐后血清胰岛素水平。另一方面，已知钒是具有胰岛素样作用的微量元素。因此，本试验探讨了含钒矿泉水对健康成年女性摄入高饱和脂肪酸饮食时轻度胰岛素抵抗的作用。</p>
+            <p>将20名健康年轻女性分为两组，每组进行交叉试验。使用两种含钒约60μg/L的矿泉水（含钒水A，含钒水B）作为受试物，将受试者分为摄入含钒水A的A组（n=10）和摄入含钒水B的B组（n=10）。分别使用不含钒的矿泉水作为安慰剂饮料。受试者连续8天摄入各受试物和脂肪能量比为30%（S:M:P=5:4:1）的高饱和脂肪酸饮食。在摄入最后一天的晚餐前及餐后30分钟、60分钟、120分钟，测定血清胰岛素值、血糖值、血清甘油三酯值、血清游离脂肪酸值。</p>
+            <p>餐后120分钟的血清胰岛素值，与对照组相比，含钒水A组显示低值。此外，含钒水B组也显示出类似的趋势。另一方面，餐后血糖值在对照组与含钒水组之间未观察到显著差异。</p>
+            <p>本试验结果表明，含钒矿泉水对健康成年女性摄入高饱和脂肪酸饮食时的轻度胰岛素抵抗具有有益作用。</p>
+        </div>
+
+        <div class="section">
+            <h2>致谢</h2>
+            <p>感谢为本试验提供部分受试物的有限会社生物微量矿物质研究所的橘田力先生。</p>
+        </div>
+
+        <div class="section">
+            <h2>参考文献</h2>
+            <ul class="ref-list">
+                <li>1） 厚生统计协会编：国民卫生动向 厚生指标, 44, 98 (1997)</li>
+                <li>2） 厚生省保健医疗局健康增进营养课监修：国民营养现状—平成元年国民营养调查成绩，p.38 (1992) 第一出版，东京</li>
+                <li>3） 健康・营养情报研究会编：国民营养现状—平成13年国民营养调查结果，p.32 (2003) 第一出版，东京</li>
+                <li>4） Black, H.R. : The colonyry artery disease paradox : The role of hyperinsulinemia and insulin resistance and implications for therapy, J. Cardiovasc. Pharmacol., 15 (suppl. 5), S26-S38 (1990)</li>
+                <li>5） 伊藤和枝，坂田利家，古贺里利子：高脂肪食とインスリン抵抗性, J. Jpn. Diab. Soc., 46 (suppl. 1), S-216 (2003)</li>
+                <li>6） Reaven, G.M.: Syndrome X, Blood Pressure, 1 (suppl. 4), 13-16 (1992)</li>
+                <li>7） Kaplan, N.M.: The deadly quartet, Arch. Intern. Med., 149, 1514-1520 (1989)</li>
+                <li>8） Nakamura, T., Tsubono, Y., Kameda-Takemura, K., Funahashi, T., Yamashita, S., Hisamichi, S., Kita, T., Yamamura, T., and Matsuzawa, Y.: Magnitude of sustained multiple risk factors for ischemic heart disease in Japanese employees—a case-control study—, Jpn. Circ. J., 65, 11-17 (2001)</li>
+                <li>9） 山内武司, 赵满根, 佐佐木香苗, 今田拓磨, 曲田清彦, 浦田宏二: バナジウム含有水とインスリン抵抗性—KK-Ayマウスのインスリン抵抗性に対するバナジウム含有水の影响—, J. Jpn. Diab. Soc., 46 (suppl. 1), S-277 (2003)</li>
+                <li>10） Paquet, M.R., Romanek, R.J., and Sargeant, R.J.: Vanadate induces the recruitment of GLUT-4 glucose transporter to the plasma membrane of rat adipocytes, Mol. Cell. Biochem., 109, 149-155 (1992)</li>
+                <li>11） 樱井弘, 田中英彦编: 生体微量元素, pp.164-166 (1993) 广川书店, 东京</li>
+                <li>12） 香川芳子监修: 科学技术厅资源调查会编 (五订日本食品标准成分表) による五订食品成分表 (2001) 女子营养大学出版社, 东京</li>
+                <li>13） 原由纪子, 坂本哲二, 山田绘理子, 渡边正一, 小林裕次, 小林政治: 全自动化学发光酶免疫测定装置 BCS600を用いたインスリン测定の基础的・临床的検讨, 医学与药学, 44, 939-946 (2000)</li>
+                <li>14） Banauch, D., Brummer, W., Ebeling, W., Metz, H., Rindfrey, H., Lang, H., Leybold, K., Rick, W., and Staudinger, H.J.: A glucose dehydrogenase for the determination of glucose concentrations in body fluids, J. Clin. Chem. Clin. Biochem., 13, 101-107 (1975)</li>
+                <li>15） Sugo, S., Matsumoto, Y., Yamaoka, T., and Sakurabayashi, I.: Improved enzymatic method for determining free fatty acids in serum, with use of 3-octenoic acid, Clin. Chem., 36, 163 (1990)</li>
+                <li>16） Tamaoku, K., Ueno, K., Akiura, K., and Ohkura, Y.: New water-soluble hydrogen donors for the enzymatic photometric determination of hydrogen peroxide. II. N-ethyl-N- (2-hydroxy-3-sulfopropyl) aniline derivatives, Chem. Pharm. Bull., 30, 2492-2497 (1982)</li>
+                <li>17） 伊藤和枝, 益田敦子, 上园庆子, 川崎晃一: 简易法による营养素等摂取量推定方法の検讨, 日本营养・食粮学会志, 45, 535-543 (1992)</li>
+                <li>18） Storlien, L.H., Jenkins, A.B., Chisholm, D.J., Pascoe, W.S., Khouri, S., and Kraegen, E.W.: Influence of dietary fat composition on development of insulin resistance in rats. Relationship to muscle triglyceride and omega-3 fatty acids in muscle phospholipid, Diabetes, 40, 280-289 (1991)</li>
+                <li>19） Marshall, J.A., Bessesen, D.H., and Hamman, R.F.: High saturated fat and low starch and fibre are associated with hyperinsulinaemia in a non-diabetic population—the San Luis Valley Diabetes Study—, Diabetologia, 40, 430-438 (1997)</li>
+                <li>20） 成宫学, 田屿尚子: インスリン抵抗性の予防とマネージメントインスリン抵抗性の基本疗法, 内科, 78, 734-738 (1996)</li>
+                <li>21） Tsiani, E., Bogdanovic, E., Sorisky, A., Nagy, L., and Fantus, I.G.: Tyrosine phosphatase inhibitors, vanadate and pervanadate, stimulate glucose transport and GLUT translocation in muscle cells by a mechanism independent of phosphatidylinositol 3-kinase and protein kinase C, Diabetes, 47, 1676-1686 (1998)</li>
+                <li>22） Morimoto, C., Tsujita, T., and Okuda, H.: Antilipolytic actions of insulin on basal and hormone-induced lipolysis in rat adipocytes, J. Lipid Res., 39, 957-962 (1998)</li>
+                <li>23） Nakai, M., Watanabe, H., Fujiwara, C., Kakegawa, H., Satoh, T., Takada, J., Matsushita, R., and Sakurai, H.: Mechanism on insulin-like action of vanadyl sulfate: studies on interaction between rat adipocytes and vanadium compounds, Biol. Pharm. Bull., 18, 719-725 (1995)</li>
+                <li>24） Dai, S., Thompson, K.H., and McNeill, J.H.: One-year treatment of streptozotocin-induced diabetic rats with vanadyl sulphate, Pharmacol. Toxicol., 74, 101-109 (1994)</li>
+            </ul>
+        </div>
+
+        <!-- 解读说明（精炼结论，无局限性） -->
+        <div class="interpretation">
+            <h3>📘 解读说明</h3>
+            <p><strong>核心结论：</strong>健康年轻女性连续8天摄入含钒（约60 μg/L）矿泉水，可显著减轻高饱和脂肪酸饮食所诱发的餐后高胰岛素血症（即轻度胰岛素抵抗），而对血糖水平无明显影响。该效应可能与钒的胰岛素样作用有关——钒促进外周组织（骨骼肌、脂肪）对葡萄糖的摄取，从而在维持血糖正常的前提下“节省”了胰岛素分泌，表现为血清胰岛素水平下降而血糖保持稳定。</p>
+            <p><strong>机制推论：</strong>高饱和脂肪酸饮食会降低外周组织对胰岛素的敏感性，机体为维持正常糖代谢会代偿性分泌更多胰岛素。含钒水通过模拟胰岛素的部分功能，增强了外周组织的糖摄取能力，减轻了胰腺β细胞的分泌负担，因此在不改变血糖的情况下降低了循环胰岛素水平，提示胰岛素抵抗得到改善。</p>
+            <p><strong>延伸意义：</strong></p>
+            <ul>
+                <li><strong>功能性饮水新思路：</strong>水作为日常饮品和烹饪用水，依从性高、适用范围广，是功能性食品的理想载体。含钒水可轻松融入日常生活，无需改变原有饮水习惯。</li>
+                <li><strong>辅助生活方式干预：</strong>含钒水不能替代健康饮食和规律运动，但可作为纠正不良生活习惯（高脂饮食、缺乏运动）的辅助手段，尤其对胰岛素抵抗早期阶段有潜在预防价值。</li>
+                <li><strong>安全性：</strong>本试验中每日约80 μg的钒摄入量远低于安全阈值（每日数百微克级别），试验期间未观察到任何不良事件或副作用，提示长期饮用风险较低。</li>
+                <li><strong>临床转化潜力：</strong>虽然不能直接等同于降糖药物，但提示钒的“胰岛素节约效应”对生活方式相关疾病（2型糖尿病、代谢综合征）的早期干预具有参考意义。</li>
+            </ul>
+            <p style="margin-top:8px;"><strong>一句话总结：</strong>含钒矿泉水通过模拟胰岛素作用，在高饱和脂肪酸饮食背景下缓解了胰岛素抵抗，表现为“血糖稳定、胰岛素需求下降”，为生活方式相关疾病的饮食预防提供了新的科学依据。</p>
+        </div>
+
+    </div> <!-- end paper-wrapper -->
+
+    <div class="footer no-print" style="margin-top: 0; padding: 8px 0 20px 0;">
+        论文翻译 · 仅供学术参考
+    </div>
+</body>
+</html>
